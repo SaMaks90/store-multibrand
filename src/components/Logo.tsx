@@ -238,11 +238,11 @@ const LogoBlack = () => {
   );
 };
 
-const LogoWhite = () => {
+const LogoWhite = ({ width, height }: ILogoProps) => {
   return (
     <svg
-      width="191"
-      height="180"
+      width={width ? width : "191"}
+      height={height ? height : "180"}
       viewBox="0 0 191 180"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

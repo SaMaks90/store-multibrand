@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 interface IRootLayoutProps {
   readonly children: ReactNode;
@@ -22,6 +23,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
   return (
     <html lang="en" className={openSans.className}>
       <body className={"flex flex-col min-h-screen"}>
+        <Header />
         <main className={"flex-grow"}>{children}</main>
         <Footer />
       </body>
