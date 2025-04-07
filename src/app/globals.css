@@ -8,16 +8,6 @@
     box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
 ol,
 ul,
 menu {
@@ -47,4 +37,6 @@ menu {
     --text-3xl: 24px;
     --text-4xl: 40px;
     --text-5xl: 48px;
+    --gradient-gold: 134deg, var(--secondary) 0%, var(--main-color) 100%;
+    --base-color-background: #fcfcfc;
 }

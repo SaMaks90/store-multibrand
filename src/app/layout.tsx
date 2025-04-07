@@ -24,7 +24,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
     <html lang="en" className={openSans.className}>
       <body className={"flex flex-col min-h-screen"}>
         <Header />
-        <main className={"flex-grow"}>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

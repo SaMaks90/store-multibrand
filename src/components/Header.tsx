@@ -1,9 +1,12 @@
+"use client";
+
 import { BiSolidCategory } from "react-icons/bi";
 import { MdArrowForwardIos } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { FaBagShopping, FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { LogoWhite } from "@/components/Logo";
 import { PrimaryButton } from "@/components/Button";
 
@@ -63,12 +66,16 @@ const HistorySearching = () => {
 
 const Header = () => {
   const isLogged = false;
+  const pathname = usePathname();
+  const router = useRouter();
+
+  if (pathname === "/login" || pathname === "/registration") {
+    return <></>;
+  }
 
   return (
     <header
-      className={
-        "w-full flex bg-gradient-to-r from-[#8f641a] to-[#dfc150] justify-center"
-      }
+      className={"w-full flex bg-linear-(--gradient-gold) justify-center"}
     >
       <section
         className={"w-7xl flex flex-row py-24 items-center justify-between"}
@@ -90,7 +97,13 @@ const Header = () => {
             2
           </span>
         </section>
-        {!isLogged && <PrimaryButton label={"Log In"} />}
+        {!isLogged && (
+          <PrimaryButton
+            label={"Log In"}
+            type={"button"}
+            actionForButton={() => router.push("/login")}
+          />
+        )}
         {isLogged && (
           <section className={"flex flex-row gap-6 items-center"}>
             <FaRegCircleUser className={"w-32 h-32 text-(--white)"} />

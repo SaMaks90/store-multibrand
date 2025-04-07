@@ -134,10 +134,16 @@ const Footer = () => {
         </p>
         <div className="col-span-1"></div>
         <section className={"col-span-1 flex justify-end gap-45"}>
-          <Link href={"/"} className={"text-(--white) text-lg leading-22"}>
+          <Link
+            href={"/terms-and-conditions"}
+            className={"text-(--white) text-lg leading-22"}
+          >
             Term Of Service
           </Link>
-          <Link href={"/"} className={"text-(--white) text-lg leading-22"}>
+          <Link
+            href={"/privacy-policy"}
+            className={"text-(--white) text-lg leading-22"}
+          >
             Privacy Policy
           </Link>
         </section>

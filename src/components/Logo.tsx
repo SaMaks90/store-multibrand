@@ -57,12 +57,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="83.0504"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_18_42"
@@ -72,12 +72,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="6.35008"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_18_42"
@@ -87,12 +87,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="170.399"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_18_42"
@@ -102,12 +102,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="168.542"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_18_42"
@@ -117,12 +117,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="166.112"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_18_42"
@@ -132,12 +132,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="163.831"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_18_42"
@@ -147,12 +147,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="161.396"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_18_42"
@@ -162,12 +162,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="159.29"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_18_42"
@@ -177,12 +177,12 @@ const LogoGold = ({ width, height }: ILogoProps) => {
           y2="156.705"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D2B868" />
-          <stop offset="0.18" stop-color="#EFE190" />
-          <stop offset="0.36" stop-color="#E7DC9C" />
-          <stop offset="0.66" stop-color="#BC9231" />
-          <stop offset="0.82" stop-color="#DFC150" />
-          <stop offset="1" stop-color="#8F641A" />
+          <stop stopColor="#D2B868" />
+          <stop offset="0.18" stopColor="#EFE190" />
+          <stop offset="0.36" stopColor="#E7DC9C" />
+          <stop offset="0.66" stopColor="#BC9231" />
+          <stop offset="0.82" stopColor="#DFC150" />
+          <stop offset="1" stopColor="#8F641A" />
         </linearGradient>
       </defs>
     </svg>
