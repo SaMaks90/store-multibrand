@@ -1,8 +1,12 @@
+import { SyncLoader } from "react-spinners";
+import clsx from "clsx";
+
 interface IButtonProps {
   label: string;
   type: "button" | "submit";
   actionForButton?: () => void;
   className?: string;
+  ariaDisabled?: boolean;
 }
 
 const PrimaryButton = ({
@@ -10,17 +14,22 @@ const PrimaryButton = ({
   type,
   actionForButton,
   className,
+  ariaDisabled,
 }: IButtonProps) => {
   return (
     <button
-      className={
-        "bg-(--dark) text-(--white) py-12 px-20 rounded-[8px] font-semibold text-2xl cursor-pointer " +
-        className
-      }
+      aria-disabled={ariaDisabled}
+      className={clsx(
+        "bg-(--dark) text-(--white) py-12 px-20 rounded-[8px] font-semibold text-2xl cursor-pointer h-50",
+        className && className,
+        ariaDisabled && "bg-(--grey) items-center flex justify-center",
+      )}
       type={type}
       onClick={actionForButton}
+      disabled={ariaDisabled}
     >
-      {label}
+      {ariaDisabled && <SyncLoader />}
+      {!ariaDisabled && <>{label}</>}
     </button>
   );
 };

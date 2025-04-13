@@ -6,9 +6,10 @@ import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { FaBagShopping, FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { LogoWhite } from "@/components/Logo";
 import { PrimaryButton } from "@/components/Button";
+import { logout } from "@/src/app/lib/actions/auth";
 
 const Category = () => {
   return (
@@ -64,10 +65,19 @@ const HistorySearching = () => {
   );
 };
 
+const LogoutButton = () => {
+  const click = async () => {
+    await logout();
+  };
+
+  return (
+    <PrimaryButton label={"LogOut"} type={"button"} actionForButton={click} />
+  );
+};
+
 const Header = () => {
   const isLogged = false;
   const pathname = usePathname();
-  const router = useRouter();
 
   if (pathname === "/login" || pathname === "/registration") {
     return <></>;
@@ -97,13 +107,7 @@ const Header = () => {
             2
           </span>
         </section>
-        {!isLogged && (
-          <PrimaryButton
-            label={"Log In"}
-            type={"button"}
-            actionForButton={() => router.push("/login")}
-          />
-        )}
+        {!isLogged && <LogoutButton />}
         {isLogged && (
           <section className={"flex flex-row gap-6 items-center"}>
             <FaRegCircleUser className={"w-32 h-32 text-(--white)"} />

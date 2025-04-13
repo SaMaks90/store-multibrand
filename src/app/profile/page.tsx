@@ -1,4 +1,5 @@
 const Page = () => {
-  return <h2>Database Success</h2>;
+  return <h2>This is a profile page</h2>;
 };
+
 export default Page;
