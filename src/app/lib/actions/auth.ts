@@ -11,11 +11,8 @@ import {
   SignupSchema,
   SigninSchema,
 } from "@/src/app/lib/definitions";
-import {
-  createSession,
-  updateSession,
-  deleteSession,
-} from "@/src/app/lib/session";
+import { createSession, deleteSession } from "@/src/app/lib/session";
+import { sendVerificationEmail } from "@/src/app/lib/verification";
 
 const sql = postgres(`${process.env.DATABASE_URL}`);
 
@@ -58,6 +55,8 @@ export const signup = async (
   }
 
   await createSession(user.id);
+  await sendVerificationEmail(user);
+
   redirect("/profile");
 };
 
@@ -104,8 +103,4 @@ export const login = async (prevState: FormStateSignin, formData: FormData) => {
 export const logout = async () => {
   await deleteSession();
   redirect(`/login`);
-};
-
-export const refresh = async () => {
-  await updateSession();
 };

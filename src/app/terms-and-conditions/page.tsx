@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+};
+
 const Page = () => {
   return (
     <main className={"flex-grow flex justify-center"}>

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentSession } from "@/src/app/lib/session";
+import { getCurrentSession, refreshSession } from "@/src/app/lib/session";
 
 const protectedRoutes = ["/profile"];
 const publicRoutes = ["/login", "/registration", "/"];
@@ -9,6 +9,8 @@ const middleware = async (req: NextRequest) => {
   const isProtectedRoute = protectedRoutes.includes(path);
   const isPublicRoute = publicRoutes.includes(path);
   const { payload } = await getCurrentSession();
+
+  await refreshSession();
 
   if (isProtectedRoute && !payload?.userId) {
     return NextResponse.redirect(new URL("/login", req.nextUrl));

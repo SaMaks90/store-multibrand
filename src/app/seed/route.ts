@@ -30,36 +30,6 @@ const seedUsers = async () => {
   return insertedUsers;
 };
 
-const seedVerificationToken = async () => {
-  await sql`
-    CREATE TABLE IF NOT EXISTS verification_token (
-      identifier TEXT NOT NULL,
-      expires TIMESTAMPTZ NOT NULL,
-      token TEXT NOT NULL,
-      PRIMARY KEY (identifier, token)
-    );
-  `;
-};
-
-const seedAccounts = async () => {
-  await sql`
-    CREATE TABLE IF NOT EXISTS accounts (
-      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      user_id UUID NOT NULL,
-      type VARCHAR(255) NOT NULL,
-      provider VARCHAR(255) NOT NULL,
-      provider_account_id VARCHAR(255) NOT NULL,
-      refresh_token TEXT,
-      access_token TEXT,
-      expires_at BIGINT,
-      id_token TEXT,
-      scope TEXT,
-      session_state TEXT,
-      token_type TEXT
-    );
-  `;
-};
-
 const seedSessions = async () => {
   await sql`
     CREATE TABLE IF NOT EXISTS sessions (
@@ -70,13 +40,22 @@ const seedSessions = async () => {
   `;
 };
 
+const seedVerificationTokens = async () => {
+  await sql`CREATE TABLE IF NOT EXISTS email_verification_tokens (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID NOT NULL,
+    token TEXT NOT NULL,
+    expires TIMESTAMP NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+  )`;
+};
+
 const GET = async () => {
   try {
     await sql.begin(() => [
       seedUsers(),
-      // seedVerificationToken(),
-      // seedAccounts(),
       seedSessions(),
+      seedVerificationTokens(),
     ]);
 
     return Response.json({ message: "Database seeded successfully" });

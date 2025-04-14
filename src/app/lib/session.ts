@@ -107,3 +107,17 @@ export const deleteSession = async () => {
   const cookieStore = await cookies();
   cookieStore.delete("session");
 };
+
+export const refreshSession = async () => {
+  const { payload } = await getCurrentSession();
+
+  if (payload) {
+    if (new Date(payload.expiresAt) < new Date()) {
+      await sql`DELETE FROM sessions WHERE id=${payload.sessionId}`;
+    }
+
+    if (new Date(payload.expiresAt).getTime() - Date.now() < 10 * 60 * 1000) {
+      await updateSession();
+    }
+  }
+};
