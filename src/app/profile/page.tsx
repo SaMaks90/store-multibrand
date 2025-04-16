@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import {
   ProfileData,
   ChangePassword,
@@ -11,14 +12,26 @@ const Page = () => {
   const params = useSearchParams();
 
   if (params.get("billing-address")) {
-    return <BillingAddress />;
+    return (
+      <Suspense>
+        <BillingAddress />
+      </Suspense>
+    );
   }
 
   if (params.get("change-password")) {
-    return <ChangePassword />;
+    return (
+      <Suspense>
+        <ChangePassword />
+      </Suspense>
+    );
   }
 
-  return <ProfileData />;
+  return (
+    <Suspense>
+      <ProfileData />
+    </Suspense>
+  );
 };
 
 export default Page;
