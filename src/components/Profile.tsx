@@ -135,11 +135,6 @@ export const ProfileView = ({ user }: IProfileViewProps) => {
 };
 
 export const ProfileData = () => {
-  const labelClassName =
-    "text-(--dark) font-(--font-weight-bold) text-xl flex flex-col gap-6 w-full";
-  const inputClassName =
-    "outline-none rounded-[8] border-1 border-(--dark) text-(--dark) text-lg font-(--font-weight-normal) h-50 px-12";
-
   return (
     <>
       <TitleSubPage title={"Profile Data"} />
