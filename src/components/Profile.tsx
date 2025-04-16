@@ -1,3 +1,9 @@
+"use client";
+
+import Link from "next/link";
+import clsx from "clsx";
+import { redirect, useSearchParams } from "next/navigation";
+import { IoHomeOutline } from "react-icons/io5";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { BsPerson } from "react-icons/bs";
 import { RiAccountBoxLine } from "react-icons/ri";
@@ -6,9 +12,8 @@ import {
   MdDeleteForever,
   MdOutlineEdit,
 } from "react-icons/md";
-import { PiSignOutLight } from "react-icons/pi";
+import { PiPasswordLight, PiSignOutLight } from "react-icons/pi";
 import { BsBoxSeam } from "react-icons/bs";
-import { redirect } from "next/navigation";
 import { IUser } from "@/src/app/lib/definitions";
 import { logout } from "@/src/app/lib/actions/auth";
 import { PrimaryButton } from "@/components/Button";
@@ -134,7 +139,7 @@ export const ProfileView = ({ user }: IProfileViewProps) => {
   );
 };
 
-export const ProfileData = () => {
+const ProfileData = () => {
   return (
     <>
       <TitleSubPage title={"Profile Data"} />
@@ -188,7 +193,7 @@ export const ProfileData = () => {
   );
 };
 
-export const ChangePassword = () => {
+const ChangePassword = () => {
   return (
     <>
       <TitleSubPage title={"Change Password"} />
@@ -218,7 +223,7 @@ export const ChangePassword = () => {
   );
 };
 
-export const BillingAddress = () => {
+const BillingAddress = () => {
   return (
     <>
       <section className={"flex flex-row justify-between"}>
@@ -229,5 +234,62 @@ export const BillingAddress = () => {
       </section>
       <AddressView />
     </>
+  );
+};
+
+export const ProfilePage = () => {
+  const params = useSearchParams();
+
+  if (params.get("billing-address")) {
+    return <BillingAddress />;
+  }
+
+  if (params.get("change-password")) {
+    return <ChangePassword />;
+  }
+
+  return <ProfileData />;
+};
+
+export const NavigationProfile = () => {
+  const params = useSearchParams();
+  const activeClassName = "bg-(--main-color) rounded-[8] text-(--white)";
+  const baseClassName = "h-50 flex items-center px-15 gap-20";
+
+  return (
+    <aside className={"w-295 flex flex-col"}>
+      <Link
+        href={"/profile"}
+        className={clsx(
+          baseClassName,
+          !params.get("change-password") &&
+            !params.get("billing-address") &&
+            activeClassName,
+        )}
+      >
+        <BsPerson className={"w-24 h-24"} />
+        Profile Data
+      </Link>
+      <Link
+        href={"/profile?billing-address=true"}
+        className={clsx(
+          baseClassName,
+          params.get("billing-address") && activeClassName,
+        )}
+      >
+        <IoHomeOutline className={"w-24 h-24"} />
+        Billing & Address
+      </Link>
+      <Link
+        href={"/profile?change-password=true"}
+        className={clsx(
+          baseClassName,
+          params.get("change-password") && activeClassName,
+        )}
+      >
+        <PiPasswordLight className={"w-24 h-24"} />
+        Change Password
+      </Link>
+    </aside>
   );
 };
