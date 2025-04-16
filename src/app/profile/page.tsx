@@ -1,5 +1,24 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
+import {
+  ProfileData,
+  ChangePassword,
+  BillingAddress,
+} from "@/components/Profile";
+
 const Page = () => {
-  return <h2>This is a profile page</h2>;
+  const params = useSearchParams();
+
+  if (params.get("billing-address")) {
+    return <BillingAddress />;
+  }
+
+  if (params.get("change-password")) {
+    return <ChangePassword />;
+  }
+
+  return <ProfileData />;
 };
 
 export default Page;

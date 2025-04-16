@@ -40,7 +40,7 @@ const decrypt = async (
 
 export const getCurrentSession = async () => {
   const session = (await cookies()).get("session")?.value;
-  const payload = await decrypt(session);
+  const payload = session ? await decrypt(session) : null;
 
   return { session, payload };
 };

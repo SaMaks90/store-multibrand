@@ -1,5 +1,5 @@
 const Home = () => {
-  return <main className={"flex-grow"}></main>;
+  return <></>;
 };
 
 export default Home;

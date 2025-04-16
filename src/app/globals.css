@@ -38,5 +38,5 @@ menu {
     --text-4xl: 40px;
     --text-5xl: 48px;
     --gradient-gold: 134deg, var(--secondary) 0%, var(--main-color) 100%;
-    --base-color-background: #fcfcfc;
+    --base-color-background: #f1f1f1;
 }

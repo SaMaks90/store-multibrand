@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentSession, refreshSession } from "@/src/app/lib/session";
+import { getCurrentSession } from "@/src/app/lib/session";
 
 const protectedRoutes = ["/profile"];
 const publicRoutes = ["/login", "/registration", "/"];
 
-const middleware = async (req: NextRequest) => {
+export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const isProtectedRoute = protectedRoutes.includes(path);
   const isPublicRoute = publicRoutes.includes(path);
   const { payload } = await getCurrentSession();
-
-  await refreshSession();
 
   if (isProtectedRoute && !payload?.userId) {
     return NextResponse.redirect(new URL("/login", req.nextUrl));
@@ -25,11 +23,9 @@ const middleware = async (req: NextRequest) => {
   }
 
   return NextResponse.next();
-};
+}
 
 // Routes Middleware should not run on
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)", "/:path*"],
 };
-
-export default middleware;

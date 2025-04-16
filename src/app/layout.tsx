@@ -4,6 +4,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+// import { refreshSession } from "@/src/app/lib/session";
 
 interface IRootLayoutProps {
   readonly children: ReactNode;
@@ -19,12 +20,20 @@ export const metadata: Metadata = {
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
-const RootLayout = ({ children }: IRootLayoutProps) => {
+const RootLayout = async ({ children }: IRootLayoutProps) => {
+  // await refreshSession();
+
   return (
     <html lang="en" className={openSans.className}>
       <body className={"flex flex-col min-h-screen"}>
         <Header />
-        {children}
+        <main
+          className={
+            "flex-grow flex justify-center h-full py-40 bg-(--base-color-background)"
+          }
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
